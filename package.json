@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test:unit": "jest test/unit",
-    "test:integration": "jest test/integration",
+    "test:integration": "jest test/integration --setupTestFrameworkScriptFile ./test/setupIntegration.js",
     "sequelize": "sequelize",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
