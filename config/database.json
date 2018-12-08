@@ -7,6 +7,7 @@
       "dialect": "mysql"
     },
     "test": {
+      "logging": false,
       "username": "root",
       "password": null,
       "database": "workshop_test",

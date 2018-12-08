@@ -7,6 +7,9 @@ const userRepository = ({ sequelizeModels }) => ({
         const newUser = this._fromDatabase(newDatabaseUser)
         return newUser;
     },
+    async size() {
+        return sequelizeModels.user.count()
+    },
     // para o padrao repository temos um mapper para transferir do dominio para como o banco entende
     _toDatabase(user) {
         return {
