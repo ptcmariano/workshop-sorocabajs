@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test:unit": "jest test/unit",
+    "test:integration": "jest test/integration",
+    "sequelize": "sequelize",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,6 +16,8 @@
     "jest": "^23.6.0"
   },
   "dependencies": {
+    "mysql2": "^1.6.4",
+    "sequelize": "^4.41.2",
     "sequelize-cli": "^5.4.0"
   }
 }
