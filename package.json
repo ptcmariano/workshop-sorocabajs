@@ -6,6 +6,9 @@
   "scripts": {
     "test:unit": "jest test/unit",
     "test:integration": "jest test/integration --setupTestFrameworkScriptFile ./test/setupIntegration.js",
+    "test:e2e": "jest test/e2e --setupTestFrameworkScriptFile ./test/setupIntegration.js",
+    "web": "node web.js",
+    "web:dev": "nodemon web.js",
     "sequelize": "sequelize",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,10 +16,15 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^23.6.0"
+    "jest": "^23.6.0",
+    "supertest": "^3.3.0"
   },
   "dependencies": {
+    "awilix": "^4.0.1",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
     "mysql2": "^1.6.4",
+    "nodemon": "^1.18.7",
     "sequelize": "^4.41.2",
     "sequelize-cli": "^5.4.0"
   }
