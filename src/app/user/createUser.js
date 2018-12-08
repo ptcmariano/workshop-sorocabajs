@@ -9,7 +9,7 @@ const createUser = ({userRepository}) => {
         onInValidUser,
         onError
     }) {
-        const user = new user(userData)
+        const user = new User(userData)
         const validation = user.validate();
         if (!validation.isValid) {
             return onInValidUser(validation.error);
@@ -22,3 +22,5 @@ const createUser = ({userRepository}) => {
         }
     }
 }
+// exporta uma funcao que cria o usuario, padrao factory
+module.exports = createUser
