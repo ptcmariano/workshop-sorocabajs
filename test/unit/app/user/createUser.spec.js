@@ -36,5 +36,23 @@ describe('createUser', () => {
             expect(spy).toHaveBeenCalled()
         })
     })
-    
+    //ignorar a existencia de banco, portanto se ele nao foi persistido, independente de onde sera
+    describe('when user cant not be persisted', () => {
+        it('calls onSuccess callback', async () => {
+            const mockUserRepository = {
+                async add(user) {
+                    throw Error('Boom')
+                }
+            }
+            const spy = jest.fn()
+            createUser = makeCreateUser({userRepository:mockUserRepository})
+            await createUser({name:'Juliana',age:19},{
+                onError(error) {
+                    spy()
+                    expect(error).toBeTruthy()
+                }
+            })
+            expect(spy).toHaveBeenCalled()
+        })
+    })
 })
